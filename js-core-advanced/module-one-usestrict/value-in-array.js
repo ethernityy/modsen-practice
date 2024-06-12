@@ -6,3 +6,4 @@ function valueInArray(arr, value) {
 
 console.log(valueInArray([1, 2, 3, 4, 5, 6, 7, 22], 7));
 console.log(valueInArray([1, 2, 3, 4, 5, 6, 7, 22], 9));
+console.log(valueInArray([1, 2, 3, 4, 5, 6, 7, 22], 22));

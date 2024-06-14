@@ -7,3 +7,48 @@ body {
   align-items: center;
   margin: 0;
 }
+
+.quiz-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px;
+  text-align: center;
+  width: 300px;
+}
+
+.question-container h2 {
+  margin: 0 0 10px 0;
+}
+
+.question-container p {
+  margin: 0 0 20px 0;
+}
+
+.options-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.option {
+  background-color: navy;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, background 0.3s;
+}
+
+.option:hover {
+  background-color: #1b5fbf;
+}
+
+.correct {
+  background-color: #4caf50 !important;
+}
+
+.incorrect {
+  background-color: #f44336 !important;
+}

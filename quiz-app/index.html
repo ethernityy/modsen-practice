@@ -13,14 +13,38 @@
         <p id="question-text">How many planets are in the solar system?</p>
       </div>
       <div class="options-container">
-        <button class="option">8</button>
-        <button class="option">7</button>
-        <button class="option">9</button>
-        <button class="option">10</button>
+        <button class="option" onclick="selectAnswer(this)" data-correct="true">
+          8
+        </button>
+        <button
+          class="option"
+          onclick="selectAnswer(this)"
+          data-correct="false"
+        >
+          7
+        </button>
+        <button
+          class="option"
+          onclick="selectAnswer(this)"
+          data-correct="false"
+        >
+          9
+        </button>
+        <button
+          class="option"
+          onclick="selectAnswer(this)"
+          data-correct="false"
+        >
+          10
+        </button>
       </div>
       <div class="nav-container">
-        <button id="prev" class="nav-btn" disabled>Previous</button>
-        <button id="next" class="nav-btn" disabled>Next</button>
+        <button id="prev" class="nav-btn" onclick="prevQuestion" disabled>
+          Previous
+        </button>
+        <button id="next" class="nav-btn" onclick="nextQuestion" disabled>
+          Next
+        </button>
       </div>
     </div>
     <script src="main.js"></script>

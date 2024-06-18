@@ -1,2 +1,1 @@
-At the moment the only working file is main js, soon the script will be separated into modules with all the functionality, currently fixing navigation buttons after separation
-Upd: fixing reset button, navigation buttons work properly
+Fixing multiple choise questions, styles dissapearance after reset, styles applied to all options (must be selected one)

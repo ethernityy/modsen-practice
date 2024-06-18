@@ -7,46 +7,22 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="quiz-container">
+    <div id="quiz" class="quiz-container">
       <div class="question-container">
         <h2 id="question-number">Question 1/8</h2>
         <p id="question-text">How many planets are in the solar system?</p>
       </div>
       <div class="options-container">
-        <button class="option" onclick="selectAnswer(this)" data-correct="true">
-          8
-        </button>
-        <button
-          class="option"
-          onclick="selectAnswer(this)"
-          data-correct="false"
-        >
-          7
-        </button>
-        <button
-          class="option"
-          onclick="selectAnswer(this)"
-          data-correct="false"
-        >
-          9
-        </button>
-        <button
-          class="option"
-          onclick="selectAnswer(this)"
-          data-correct="false"
-        >
-          10
-        </button>
+        <button class="option" data-correct="true">8</button>
+        <button class="option" data-correct="false">7</button>
+        <button class="option" data-correct="false">9</button>
+        <button class="option" data-correct="false">10</button>
       </div>
       <div class="nav-container">
-        <button id="prev" class="nav-btn" onclick="prevQuestion" disabled>
-          Previous
-        </button>
-        <button id="next" class="nav-btn" onclick="nextQuestion" disabled>
-          Next
-        </button>
+        <button id="prev" class="nav-btn" disabled>Previous</button>
+        <button id="next" class="nav-btn" disabled>Next</button>
       </div>
     </div>
-    <script src="main.js"></script>
+    <script type="module" src="main.js"></script>
   </body>
 </html>

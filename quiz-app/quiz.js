@@ -60,10 +60,15 @@ function setCurrentQuestion(value) {
   currentQuestion = value;
 }
 
+function resetCorrectAnswers() {
+  correctAnswers = 0;
+}
+
 export {
   showQuestion,
   selectAnswer,
   getCurrentQuestion,
   setCurrentQuestion,
   correctAnswers,
+  resetCorrectAnswers,
 };

@@ -49,6 +49,9 @@ function restartQuiz() {
     <button id="next" onclick="nextQuestion()">Next</button>
   `;
 
+  document.getElementById('prev').addEventListener('click', prevQuestion);
+  document.getElementById('next').addEventListener('click', nextQuestion);
+
   showQuestion();
 }
 window.restartQuiz = restartQuiz;

@@ -1,9 +1,17 @@
-import { showQuestion, currentQuestion, correctAnswers } from './quiz.js';
+import {
+  showQuestion,
+  getCurrentQuestion,
+  setCurrentQuestion,
+  correctAnswers,
+} from './quiz.js';
 import { questions } from './questions.js';
 
 function nextQuestion() {
-  currentQuestion++;
+  console.log('Next button clicked');
+  let currentQuestion = getCurrentQuestion();
   if (currentQuestion < questions.length) {
+    setCurrentQuestion(currentQuestion + 1);
+    console.log('Current', currentQuestion);
     showQuestion();
   } else {
     showResults();
@@ -11,8 +19,9 @@ function nextQuestion() {
 }
 
 function prevQuestion() {
+  let currentQuestion = getCurrentQuestion();
   if (currentQuestion > 0) {
-    currentQuestion--;
+    setCurrentQuestion(currentQuestion - 1);
     showQuestion();
   }
 }
@@ -29,7 +38,7 @@ function showResults() {
 }
 
 function restartQuiz() {
-  currentQuestion = 0;
+  setCurrentQuestion(0);
   correctAnswers = 0;
   showQuestion();
 }

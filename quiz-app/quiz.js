@@ -1,3 +1,4 @@
+import { showResults } from './navigation.js';
 import { questions } from './questions.js';
 
 let currentQuestion = 0;
@@ -8,6 +9,11 @@ function showQuestion() {
   const questionTextElement = document.getElementById('question-text');
   const optionsContainerElement = document.querySelector('.options-container');
   const nextBtn = document.getElementById('next');
+
+  if (currentQuestion >= questions.length) {
+    showResults();
+    return;
+  }
 
   questionNumberElement.innerText = `Question ${currentQuestion + 1}/${
     questions.length
@@ -46,4 +52,18 @@ function selectAnswer(selectedButton) {
   document.getElementById('next').disabled = false;
 }
 
-export { showQuestion, selectAnswer, currentQuestion, correctAnswers };
+function getCurrentQuestion() {
+  return currentQuestion;
+}
+
+function setCurrentQuestion(value) {
+  currentQuestion = value;
+}
+
+export {
+  showQuestion,
+  selectAnswer,
+  getCurrentQuestion,
+  setCurrentQuestion,
+  correctAnswers,
+};

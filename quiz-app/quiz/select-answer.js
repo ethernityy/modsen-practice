@@ -1,10 +1,4 @@
-import {
-  correctAnswers,
-  getCurrentQuestion,
-  setCurrentQuestion,
-  resetSelection,
-  resetCorrectAnswers,
-} from './index.js';
+import { correctAnswers, getCurrentQuestion } from './resetCorrectAnswers.js';
 import { questions } from '../questions.js';
 
 let selectedAnswers = [];

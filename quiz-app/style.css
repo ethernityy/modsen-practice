@@ -59,11 +59,15 @@ body {
   background-color: #1b5fbf;
 }
 
-.correct {
+.option.selected {
+  background-color: #381cda;
+}
+
+.option.correct {
   background-color: #4caf50 !important;
 }
 
-.incorrect {
+.option.incorrect {
   background-color: #f44336 !important;
 }
 

@@ -75,6 +75,10 @@ body {
   background-color: #f44336 !important;
 }
 
+.selected {
+  background-color: #a606f1 !important;
+}
+
 .nav-container {
   display: flex;
   justify-content: flex-end;

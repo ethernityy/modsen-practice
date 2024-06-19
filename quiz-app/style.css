@@ -19,8 +19,16 @@ body {
   max-width: 600px;
 }
 
+.info-paragraph {
+  grid-column: 1 / -1;
+  margin-bottom: 10px;
+  font-size: 0.9em;
+}
+
 .question-container {
   margin-bottom: 20px;
+  display: grid;
+  gap: 10px;
 }
 
 #question-number {
@@ -95,6 +103,10 @@ body {
 @media (max-width: 600px) {
   .quiz-container {
     padding: 15px;
+  }
+
+  .options-container {
+    grid-template-columns: 1fr;
   }
 
   #question-text {

@@ -1,0 +1,59 @@
+:root {
+  --body-background-gradient: linear-gradient(135deg, #2d87f3, #49a6e9);
+
+  --container-background-color: white;
+  --container-box-shadow: 0 0 20px;
+
+  --font-color-dark: #333;
+
+  --option-background-color: navy;
+  --option-hover-background-color: #1b5fbf;
+
+  --correct-background-color: #4caf50;
+  --incorrect-background-color: #f44336;
+  --selected-background-color: #a606f1;
+
+  --nav-btn-background-color: #451d95;
+  --nav-btn-hover-background-color: #1b5fbf;
+  --nav-btn-disabled-background-color: #e0e0e0;
+
+  --body-height: 100vh;
+
+  --container-padding: 20px;
+  --container-border-radius: 10px;
+  --container-width: 300px;
+  --container-max-width: 600px;
+
+  --paragraph-margin-bottom: 10px;
+  --paragraph-font-size: 0.9em;
+
+  --question-margin-bottom: 20px;
+  --question-gap: 10px;
+  --question-number-font-size: 1.2em;
+  --question-text-margin: 10px 0;
+  --question-text-font-size: 1.5em;
+  --question-p-margin: 0 0 20px 0;
+
+  --option-padding: 10px;
+  --option-border-radius: 5px;
+  --option-hover-transition: 0.3s;
+
+  --nav-margin-top: 20px;
+  --nav-btn-padding: 10px 20px;
+  --nav-btn-border-radius: 5px;
+  --nav-btn-hover-transition: 0.3s;
+
+  --media-600-padding: 15px;
+  --media-600-option-padding: 8px;
+  --media-600-option-font-size: 0.9em;
+  --media-600-nav-btn-padding: 8px 15px;
+  --media-600-nav-btn-font-size: 0.9em;
+
+  --media-400-question-margin-bottom: 15px;
+  --media-400-question-number-font-size: 1em;
+  --media-400-question-text-font-size: 1em;
+  --media-400-option-padding: 6px;
+  --media-400-option-font-size: 0.8em;
+  --media-400-nav-btn-padding: 6px 10px;
+  --media-400-nav-btn-font-size: 0.8em;
+}

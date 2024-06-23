@@ -1,7 +1,9 @@
+@import url('constants.css');
+
 body {
   font-family: sans-serif;
-  background: linear-gradient(135deg, #2d87f3, #49a6e9);
-  height: 100vh;
+  background: var(--body-background-gradient);
+  height: var(--body-height);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,104 +11,106 @@ body {
 }
 
 .quiz-container {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px;
+  background-color: var(--container-background-color);
+  padding: var(--container-padding);
+  border-radius: var(--container-border-radius);
+  box-shadow: var(--container-box-shadow);
   text-align: center;
-  width: 300px;
+  width: var(--container-width);
   box-sizing: border-box;
-  max-width: 600px;
+  max-width: var(--container-max-width);
 }
 
 .info-paragraph {
   grid-column: 1 / -1;
-  margin-bottom: 10px;
-  font-size: 0.9em;
+  margin-bottom: var(--paragraph-margin-bottom);
+  font-size: var(--paragraph-font-size);
 }
 
 .question-container {
-  margin-bottom: 20px;
+  margin-bottom: var(--question-margin-bottom);
   display: grid;
-  gap: 10px;
+  gap: var(--question-gap);
 }
 
 #question-number {
   margin: 0;
-  font-size: 1.2em;
-  color: #333;
+  font-size: var(--question-number-font-size);
+  color: var(--font-color-dark);
 }
 
 #question-text {
-  margin: 10px 0;
-  font-size: 1.5em;
-  color: #333;
+  margin: var(--question-text-margin);
+  font-size: var(--question-text-font-size);
+  color: var(--font-color-dark);
 }
 
 .question-container p {
-  margin: 0 0 20px 0;
+  margin: var(--question-p-margin);
 }
 
 .options-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: var(--question-gap);
 }
 
 .option {
-  background-color: navy;
+  background-color: var(--option-background-color);
   color: white;
   border: none;
-  padding: 10px;
-  border-radius: 5px;
+  padding: var(--option-padding);
+  border-radius: var(--option-border-radius);
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color var(--option-hover-transition);
 }
 
 .option:hover {
-  background-color: #1b5fbf;
+  background-color: var(--option-hover-background-color);
 }
 
-.correct {
-  background-color: #4caf50 !important;
+.correct,
+.correct:hover {
+  background-color: var(--correct-background-color);
 }
 
-.incorrect {
-  background-color: #f44336 !important;
+.incorrect,
+.incorrect:hover {
+  background-color: var(--incorrect-background-color);
 }
 
 .selected {
-  background-color: #a606f1 !important;
+  background-color: var(--selected-background-color);
 }
 
 .nav-container {
   display: flex;
   justify-content: flex-end;
-  margin-top: 20px;
+  margin-top: var(--nav-margin-top);
 }
 
 .nav-btn {
-  background-color: #451d95;
+  background-color: var(--nav-btn-background-color);
   color: white;
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: var(--nav-btn-padding);
+  border-radius: var(--nav-btn-border-radius);
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color var(--nav-btn-hover-transition);
 }
 
 .nav-btn:disabled {
-  background-color: #e0e0e0;
+  background-color: var(--nav-btn-disabled-background-color);
   cursor: not-allowed;
 }
 
 .nav-btn:hover:enabled {
-  background-color: #1b5fbf;
+  background-color: var(--nav-btn-hover-background-color);
 }
 
 @media (max-width: 600px) {
   .quiz-container {
-    padding: 15px;
+    padding: var(--media-600-padding);
   }
 
   .options-container {
@@ -114,17 +118,17 @@ body {
   }
 
   #question-text {
-    font-size: 1.2em;
+    font-size: var(--media-600-question-text-font-size);
   }
 
   .option {
-    padding: 8px;
-    font-size: 0.9em;
+    padding: var(--media-600-option-padding);
+    font-size: var(--media-600-option-font-size);
   }
 
   .nav-btn {
-    padding: 8px 15px;
-    font-size: 0.9em;
+    padding: var(--media-600-nav-btn-padding);
+    font-size: var(--media-600-nav-btn-font-size);
   }
 }
 
@@ -142,24 +146,24 @@ body {
   }
 
   .question-container {
-    margin-bottom: 15px;
+    margin-bottom: var(--media-400-question-margin-bottom);
   }
 
   #question-number {
-    font-size: 1em;
+    font-size: var(--media-400-question-number-font-size);
   }
 
   #question-text {
-    font-size: 1em;
+    font-size: var(--media-400-question-text-font-size);
   }
 
   .option {
-    padding: 6px;
-    font-size: 0.8em;
+    padding: var(--media-400-option-padding);
+    font-size: var(--media-400-option-font-size);
   }
 
   .nav-btn {
-    padding: 6px 10px;
-    font-size: 0.8em;
+    padding: var(--media-400-nav-btn-padding);
+    font-size: var(--media-400-nav-btn-font-size);
   }
 }

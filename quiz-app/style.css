@@ -69,6 +69,21 @@ body {
   background-color: var(--option-hover-background-color);
 }
 
+#check-btn {
+  background-color: var(--nav-btn-background-color);
+  color: white;
+  border: none;
+  padding: var(--nav-btn-padding);
+  border-radius: var(--nav-btn-border-radius);
+  cursor: pointer;
+  transition: background-color var(--nav-btn-hover-transition);
+  margin-right: 10px;
+}
+
+#check-btn:hover {
+  background-color: var(--nav-btn-hover-background-color);
+}
+
 .correct,
 .correct:hover {
   background-color: var(--correct-background-color);
@@ -79,7 +94,7 @@ body {
   background-color: var(--incorrect-background-color);
 }
 
-.selected {
+.selected:not(.correct):not(.incorrect) {
   background-color: var(--selected-background-color);
 }
 

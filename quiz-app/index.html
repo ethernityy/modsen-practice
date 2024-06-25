@@ -7,21 +7,28 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="quiz" class="quiz-container">
-      <div class="question-container">
-        <h2 id="question-number">Question 1/8</h2>
-        <p id="question-text">How many planets are in the solar system?</p>
+    <header>
+      <label class="theme-switch">
+        <input type="checkbox" id="theme-toggle">
+        <span class="slider"></span>
+    </header>
+    <main>
+      <div id="quiz" class="quiz-container">
+        <div class="question-container">
+          <h2 id="question-number">Question 1/8</h2>
+          <p id="question-text">How many planets are in the solar system?</p>
+        </div>
+        <div class="options-container">
+          <button class="option">8</button>
+          <button class="option">7</button>
+          <button class="option">9</button>
+          <button class="option">10</button>
+        </div>
+        <div class="nav-container">
+          <button id="next-btn" class="nav-btn" disabled>Next</button>
+        </div>
       </div>
-      <div class="options-container">
-        <button class="option">8</button>
-        <button class="option">7</button>
-        <button class="option">9</button>
-        <button class="option">10</button>
-      </div>
-      <div class="nav-container">
-        <button id="next-btn" class="nav-btn" disabled>Next</button>
-      </div>
-    </div>
+    </main>
     <script src="main.js"></script>
   </body>
 </html>

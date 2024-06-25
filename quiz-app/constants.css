@@ -1,21 +1,32 @@
 :root {
   --body-background-gradient: linear-gradient(135deg, #2d87f3, #49a6e9);
+  --body-background-dark: #181818;
 
   --container-background-color: white;
+  --container-background-color-dark: #333;
   --container-box-shadow: 0 0 20px;
 
   --font-color-dark: #333;
+  --font-color-light: #fff;
 
   --option-background-color: navy;
+  --option-background-color-dark: #555;
   --option-hover-background-color: #1b5fbf;
+  --option-hover-background-color-dark: #777;
 
   --correct-background-color: #4caf50;
+  --correct-background-color-dark: #388e3c;
   --incorrect-background-color: #f44336;
+  --incorrect-background-color-dark: #d32f2f;
   --selected-background-color: #a606f1;
+  --selected-background-color-dark: #7b1fa2;
 
   --nav-btn-background-color: #451d95;
+  --nav-btn-background-color-dark: #777;
   --nav-btn-hover-background-color: #1b5fbf;
+  --nav-btn-hover-background-color-dark: #999;
   --nav-btn-disabled-background-color: #e0e0e0;
+  --nav-btn-disabled-background-color-dark: #444;
 
   --body-height: 100vh;
 

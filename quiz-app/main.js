@@ -211,4 +211,24 @@ function showCorrectAnswers() {
   nextButton.disabled = false;
 }
 
+const themeToggle = document.getElementById('theme-toggle');
+
+themeToggle.addEventListener('change', () => {
+  document.body.classList.toggle('dark-mode');
+  document.querySelector('.quiz-container').classList.toggle('dark-mode');
+  document.querySelector('header').classList.toggle('dark-mode');
+  localStorage.setItem('theme', themeToggle.checked ? 'dark' : 'light');
+});
+
+function initializeTheme() {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    document.querySelector('.quiz-container').classList.add('dark-mode');
+    document.querySelector('header').classList.add('dark-mode');
+    themeToggle.checked = true;
+  }
+}
+
+initializeTheme();
 loadQuestion();

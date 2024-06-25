@@ -1,0 +1,59 @@
+body.dark-mode {
+  background: var(--body-background-dark);
+  color: var(--font-color-light);
+}
+
+header.dark-mode {
+  background-color: var(--container-background-color-dark);
+  color: var(--font-color-light);
+}
+
+.quiz-container.dark-mode {
+  background-color: var(--container-background-color-dark);
+}
+
+body.dark-mode #question-text,
+body.dark-mode #question-number {
+  color: var(--font-color-light);
+}
+
+body.dark-mode .info-paragraph {
+  color: var(--font-color-light);
+}
+
+body.dark-mode .option {
+  background-color: var(--option-background-color-dark);
+  color: var(--font-color-light);
+}
+
+body.dark-mode .option:hover {
+  background-color: var(--option-hover-background-color-dark);
+}
+
+body.dark-mode .nav-btn {
+  background-color: var(--nav-btn-background-color-dark);
+}
+
+body.dark-mode .nav-btn:hover:enabled {
+  background-color: var(--nav-btn-hover-background-color-dark);
+}
+
+body.dark-mode .nav-btn:disabled {
+  background-color: var(--nav-btn-disabled-background-color-dark);
+}
+
+body.dark-mode .correct,
+body.dark-mode .correct:hover {
+  background-color: var(--correct-background-color-dark);
+  color: var(--font-color-light);
+}
+
+body.dark-mode .incorrect,
+body.dark-mode .incorrect:hover {
+  background-color: var(--incorrect-background-color-dark);
+  color: var(--font-color-light);
+}
+
+body.dark-mode .selected:not(.correct):not(.incorrect) {
+  background-color: var(--selected-background-color-dark);
+}

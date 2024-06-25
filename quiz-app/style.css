@@ -14,16 +14,14 @@ body {
 header {
   background-color: var(--container-background-color);
   width: 100%;
-  padding: 20px 0;
+  padding: var(--header-padding);
   box-shadow: var(--container-box-shadow);
-  text-align: center;
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  padding: 10px 20px;
+  box-sizing: border-box;
+  z-index: 1000;
 }
 
 main {
@@ -35,10 +33,10 @@ main {
 }
 
 .theme-switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
+  display: flex;
+  align-items: center;
+  gap: var(--theme-switch-gap);
+  cursor: pointer;
 }
 
 .theme-switch input {
@@ -48,27 +46,24 @@ main {
 }
 
 .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: 0.4s;
-  border-radius: 34px;
+  position: relative;
+  width: var(--slider-width);
+  height: var(--slider-height);
+  background-color: var(--slider-bgc);
+  transition: var(--slider-transition);
+  border-radius: var(--slider-border-radius);
 }
 
 .slider:before {
   position: absolute;
   content: '';
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
+  height: var(--slider-before-wh);
+  width: var(--slider-before-wh);
+  left: var(--slider-before-lb);
+  bottom: var(--slider-before-lb);
   background-color: white;
-  transition: 0.4s;
-  border-radius: 50%;
+  transition: var(--slider-transition);
+  border-radius: var(--slider-berore-br);
 }
 
 input:checked + .slider {
@@ -222,6 +217,9 @@ input:checked + .slider:before {
     align-items: center;
   }
 
+  header {
+    z-index: 1000;
+  }
   .quiz-container {
     width: 100%;
     height: auto;

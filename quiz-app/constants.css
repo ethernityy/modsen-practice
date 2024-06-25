@@ -2,6 +2,8 @@
   --body-background-gradient: linear-gradient(135deg, #2d87f3, #49a6e9);
   --body-background-dark: #181818;
 
+  --header-padding: 20px 20px;
+
   --container-background-color: white;
   --container-background-color-dark: #333;
   --container-box-shadow: 0 0 20px;
@@ -67,4 +69,16 @@
   --media-400-option-font-size: 0.8em;
   --media-400-nav-btn-padding: 6px 10px;
   --media-400-nav-btn-font-size: 0.8em;
+
+  --theme-switch-gap: 10px;
+
+  --slider-width: 60px;
+  --slider-height: 34px;
+  --slider-border-radius: 34px;
+  --slider-bgc: #ccc;
+  --slider-transition: 0.4s;
+
+  --slider-before-wh: 26px;
+  --slider-before-lb: 4px;
+  --slider-berore-br: 50%;
 }

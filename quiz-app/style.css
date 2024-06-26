@@ -38,7 +38,7 @@ main {
   gap: var(--theme-switch-gap);
   cursor: pointer;
   position: absolute;
-  right: 20px;
+  right: var(--theme-switch-right);
 }
 
 .theme-switch input {

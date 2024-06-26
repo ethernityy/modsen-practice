@@ -211,6 +211,20 @@ input:checked + .slider:before {
     padding: var(--media-600-nav-btn-padding);
     font-size: var(--media-600-nav-btn-font-size);
   }
+
+  #header {
+    justify-content: flex-start;
+  }
+
+  #timer {
+    margin: 0;
+    order: 1;
+  }
+
+  #theme-toggle-container {
+    order: 2;
+    margin-left: 0;
+  }
 }
 
 @media (max-width: 400px) {
@@ -219,9 +233,6 @@ input:checked + .slider:before {
     align-items: center;
   }
 
-  header {
-    z-index: 1000;
-  }
   .quiz-container {
     width: 100%;
     height: auto;

@@ -57,3 +57,7 @@ body.dark-mode .incorrect:hover {
 body.dark-mode .selected:not(.correct):not(.incorrect) {
   background-color: var(--selected-background-color-dark);
 }
+
+.dark-mode #timer {
+  color: var(--font-color-light);
+}

@@ -86,11 +86,14 @@ const questions = [
 let currentQuestionIndex = 0;
 let score = 0;
 const totalQuestions = questions.length;
+let timerInterval;
+let startTime;
 
 const questionNumberElement = document.getElementById('question-number');
 const questionTextElement = document.getElementById('question-text');
 const optionsContainerElement = document.querySelector('.options-container');
 const nextButton = document.getElementById('next-btn');
+const timerElement = document.getElementById('timer');
 
 const checkButton = document.createElement('button');
 checkButton.id = 'check-btn';
@@ -98,7 +101,28 @@ checkButton.textContent = 'Check Answers';
 checkButton.style.marginRight = '10px';
 nextButton.parentNode.insertBefore(checkButton, nextButton);
 
+function startTimer() {
+  startTime = Date.now();
+  timerInterval = setInterval(updateTimer, 1000);
+}
+
+function updateTimer() {
+  const elapsedTime = Date.now() - startTime;
+  const totalSeconds = Math.floor(elapsedTime / 1000);
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+  timerElement.textContent = `Time: ${minutes < 10 ? '0' : ''}${minutes}:${
+    seconds < 10 ? '0' : ''
+  }${seconds}`;
+}
+
+function stopTimer() {
+  clearInterval(timerInterval);
+}
+
 function loadQuestion() {
+  if (currentQuestionIndex === 0) startTimer();
+
   const currentQuestion = questions[currentQuestionIndex];
   questionNumberElement.textContent = `Question ${
     currentQuestionIndex + 1
@@ -172,6 +196,7 @@ function handleNextQuestion() {
 }
 
 function showResults() {
+  stopTimer();
   questionNumberElement.textContent = 'Quiz Completed!';
   questionTextElement.textContent = `You scored ${score} out of ${totalQuestions}`;
   optionsContainerElement.innerHTML = '';

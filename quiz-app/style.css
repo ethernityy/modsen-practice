@@ -18,7 +18,7 @@ header {
   box-shadow: var(--container-box-shadow);
   position: relative;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   box-sizing: border-box;
   z-index: 1000;
@@ -37,6 +37,8 @@ main {
   align-items: center;
   gap: var(--theme-switch-gap);
   cursor: pointer;
+  position: absolute;
+  right: 20px;
 }
 
 .theme-switch input {
@@ -248,4 +250,8 @@ input:checked + .slider:before {
     padding: var(--media-400-nav-btn-padding);
     font-size: var(--media-400-nav-btn-font-size);
   }
+}
+
+#timer {
+  font-size: var(--timer-font-size);
 }

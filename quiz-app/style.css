@@ -221,9 +221,8 @@ input:checked + .slider:before {
     order: 1;
   }
 
-  #theme-toggle-container {
-    order: 2;
-    margin-left: 0;
+  .theme-switch {
+    gap: 0;
   }
 }
 
@@ -260,6 +259,10 @@ input:checked + .slider:before {
   .nav-btn {
     padding: var(--media-400-nav-btn-padding);
     font-size: var(--media-400-nav-btn-font-size);
+  }
+
+  #switch-text {
+    display: none;
   }
 }
 

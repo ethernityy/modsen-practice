@@ -26,6 +26,22 @@ app.get('/status', async (req, res) => {
   }
 });
 
+app.get('/status100', (req, res) => {
+  res.status(100).send('Continue');
+});
+
+app.get('/status300', (req, res) => {
+  res.status(300).send('Multiple Choices');
+});
+
+app.get('/status400', (req, res) => {
+  res.status(400).send('Bad Request');
+});
+
+app.get('/status500', (req, res) => {
+  res.status(500).send('Internal Server Error');
+});
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });

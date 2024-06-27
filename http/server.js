@@ -26,8 +26,8 @@ app.get('/status', async (req, res) => {
   }
 });
 
-app.get('/status100', (req, res) => {
-  res.status(100).send('Continue');
+app.get('/status102', (req, res) => {
+  res.status(102).send('Processing');
 });
 
 app.get('/status300', (req, res) => {

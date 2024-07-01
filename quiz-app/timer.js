@@ -1,21 +1,21 @@
 let timerInterval;
 let startTime;
 
-export function startTimer(updateTimerCallback) {
+export function startTimer(timerElement) {
   startTime = Date.now();
-  timerInterval = setInterval(() => updateTimerCallback(startTime), 1000);
+  timerInterval = setInterval(() => updateTimer(timerElement), 1000);
 }
 
-export function stopTimer() {
-  clearInterval(timerInterval);
-}
-
-export function updateTimer(startTime) {
+function updateTimer(timerElement) {
   const elapsedTime = Date.now() - startTime;
   const totalSeconds = Math.floor(elapsedTime / 1000);
   const minutes = Math.floor(totalSeconds / 60);
   const seconds = totalSeconds % 60;
-  return `Time: ${minutes < 10 ? '0' : ''}${minutes}:${
+  timerElement.textContent = `Time: ${minutes < 10 ? '0' : ''}${minutes}:${
     seconds < 10 ? '0' : ''
   }${seconds}`;
+}
+
+export function stopTimer() {
+  clearInterval(timerInterval);
 }

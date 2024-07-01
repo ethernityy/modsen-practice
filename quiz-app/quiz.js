@@ -1,24 +1,30 @@
 import { questions } from './questions.js';
-import { startTimer, stopTimer, updateTimer } from './timer.js';
+import { startTimer, stopTimer } from './timer.js';
+import { showResults, restartQuiz } from './results.js';
 
-export function loadQuestion(state, elements) {
-  const {
-    questionNumberElement,
-    questionTextElement,
-    optionsContainerElement,
-    nextButton,
-    checkButton,
-    timerElement,
-  } = elements;
+export let currentQuestionIndex = 0;
+export let score = 0;
+const totalQuestions = questions.length;
 
-  if (state.currentQuestionIndex === 0) {
-    startTimer((startTime) => updateQuizTimer(startTime, timerElement));
-  }
+const questionNumberElement = document.getElementById('question-number');
+const questionTextElement = document.getElementById('question-text');
+const optionsContainerElement = document.querySelector('.options-container');
+const nextButton = document.getElementById('next-btn');
+const timerElement = document.getElementById('timer');
 
-  const currentQuestion = questions[state.currentQuestionIndex];
+const checkButton = document.createElement('button');
+checkButton.id = 'check-btn';
+checkButton.textContent = 'Check Answers';
+checkButton.style.marginRight = '10px';
+nextButton.parentNode.insertBefore(checkButton, nextButton);
+
+export function loadQuestion() {
+  if (currentQuestionIndex === 0) startTimer(timerElement);
+
+  const currentQuestion = questions[currentQuestionIndex];
   questionNumberElement.textContent = `Question ${
-    state.currentQuestionIndex + 1
-  }/${state.totalQuestions}`;
+    currentQuestionIndex + 1
+  }/${totalQuestions}`;
   questionTextElement.textContent = currentQuestion.question;
   optionsContainerElement.innerHTML = '';
 
@@ -41,31 +47,16 @@ export function loadQuestion(state, elements) {
     button.classList.add('option');
     button.textContent = option.text;
     button.dataset.isCorrect = option.isCorrect;
-    button.addEventListener('click', (event) =>
-      selectAnswer(
-        event,
-        currentQuestion,
-        optionsContainerElement,
-        nextButton,
-        checkButton,
-        state
-      )
-    );
+    button.addEventListener('click', selectAnswer);
     optionsContainerElement.appendChild(button);
   });
 
   nextButton.disabled = true;
 }
 
-function selectAnswer(
-  event,
-  currentQuestion,
-  optionsContainerElement,
-  nextButton,
-  checkButton,
-  state
-) {
+function selectAnswer(event) {
   const selectedButton = event.target;
+  const currentQuestion = questions[currentQuestionIndex];
 
   if (currentQuestion.isMultiple) {
     selectedButton.classList.toggle('selected');
@@ -78,7 +69,7 @@ function selectAnswer(
   const isCorrect = selectedButton.dataset.isCorrect === 'true';
   selectedButton.classList.add(isCorrect ? 'correct' : 'incorrect');
 
-  if (isCorrect) state.score++;
+  if (isCorrect) score++;
 
   Array.from(optionsContainerElement.children).forEach((button) => {
     button.disabled = true;
@@ -90,19 +81,26 @@ function selectAnswer(
   nextButton.disabled = false;
 }
 
-export function showCorrectAnswers(
-  currentQuestion,
-  optionsContainerElement,
-  checkButton,
-  nextButton,
-  state
-) {
+export function handleNextQuestion() {
+  if (currentQuestionIndex < totalQuestions - 1) {
+    currentQuestionIndex++;
+    loadQuestion();
+  } else {
+    showResults(score, totalQuestions, stopTimer, restartQuiz);
+  }
+}
+
+nextButton.addEventListener('click', handleNextQuestion);
+checkButton.addEventListener('click', showCorrectAnswers);
+
+function showCorrectAnswers() {
+  const currentQuestion = questions[currentQuestionIndex];
   if (currentQuestion.isMultiple) {
     const selectedButtons = document.querySelectorAll('.option.selected');
     selectedButtons.forEach((button) => {
       const isCorrect = button.dataset.isCorrect === 'true';
       button.classList.add(isCorrect ? 'correct' : 'incorrect');
-      if (isCorrect) state.score++;
+      if (isCorrect) score++;
     });
     Array.from(optionsContainerElement.children).forEach((button) => {
       button.disabled = true;
@@ -115,6 +113,4 @@ export function showCorrectAnswers(
   nextButton.disabled = false;
 }
 
-function updateQuizTimer(startTime, timerElement) {
-  timerElement.textContent = updateTimer(startTime);
-}
+loadQuestion();

@@ -1,4 +1,6 @@
-export function initializeTheme(themeToggle) {
+const themeToggle = document.getElementById('theme-toggle');
+
+export function initializeTheme() {
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'dark') {
     document.body.classList.add('dark-mode');
@@ -8,9 +10,9 @@ export function initializeTheme(themeToggle) {
   }
 }
 
-export function toggleTheme(themeToggle) {
+themeToggle.addEventListener('change', () => {
   document.body.classList.toggle('dark-mode');
   document.querySelector('.quiz-container').classList.toggle('dark-mode');
   document.querySelector('header').classList.toggle('dark-mode');
   localStorage.setItem('theme', themeToggle.checked ? 'dark' : 'light');
-}
+});

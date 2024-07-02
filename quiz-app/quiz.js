@@ -1,6 +1,5 @@
 import { questions } from './questions.js';
 import { startTimer, stopTimer } from './timer.js';
-import { showResults, restartQuiz } from './results.js';
 
 export let currentQuestionIndex = 0;
 export let score = 0;
@@ -86,8 +85,29 @@ export function handleNextQuestion() {
     currentQuestionIndex++;
     loadQuestion();
   } else {
-    showResults(score, totalQuestions, stopTimer, restartQuiz);
+    showResults(score, totalQuestions);
   }
+}
+
+export function showResults(score, totalQuestions) {
+  stopTimer();
+  questionNumberElement.textContent = 'Quiz Completed!';
+  questionTextElement.textContent = `You scored ${score} out of ${totalQuestions}`;
+  optionsContainerElement.innerHTML = '';
+  nextButton.textContent = 'Restart';
+  nextButton.removeEventListener('click', handleNextQuestion);
+  nextButton.addEventListener('click', restartQuiz);
+  nextButton.disabled = false;
+  checkButton.style.display = 'none';
+}
+
+export function restartQuiz() {
+  currentQuestionIndex = 0;
+  score = 0;
+  nextButton.textContent = 'Next';
+  nextButton.removeEventListener('click', restartQuiz);
+  nextButton.addEventListener('click', handleNextQuestion);
+  loadQuestion();
 }
 
 nextButton.addEventListener('click', handleNextQuestion);
